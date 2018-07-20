@@ -250,9 +250,10 @@ didCompleteWithError:(NSError *)error
                     self.completionHandler(task.response, responseObject, serializationError);
                 }
 
+                /*pkl
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo];
-                });
+                });*/
             });
         });
     }
@@ -535,6 +536,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
 }
 
 - (void)taskDidResume:(NSNotification *)notification {
+    /*pkl
     NSURLSessionTask *task = notification.object;
     if ([task respondsToSelector:@selector(taskDescription)]) {
         if ([task.taskDescription isEqualToString:self.taskDescriptionForSessionTasks]) {
@@ -542,10 +544,11 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
                 [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidResumeNotification object:task];
             });
         }
-    }
+    }*/
 }
 
 - (void)taskDidSuspend:(NSNotification *)notification {
+    /*pkl
     NSURLSessionTask *task = notification.object;
     if ([task respondsToSelector:@selector(taskDescription)]) {
         if ([task.taskDescription isEqualToString:self.taskDescriptionForSessionTasks]) {
@@ -553,7 +556,7 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
                 [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidSuspendNotification object:task];
             });
         }
-    }
+    }*/
 }
 
 #pragma mark -
